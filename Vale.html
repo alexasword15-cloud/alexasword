@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Валентинка</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffebee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            color: #d32f2f;
+        }
+        .section {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            max-width: 90%;
+        }
+        .active {
+            display: flex;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        h1, p {
+            margin: 10px 0;
+        }
+        button {
+            background-color: #f48fb1;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #ec407a;
+        }
+        #modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 300px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        #congrats {
+            background-image: url('https://thumbs.dreamstime.com/b/decorative-hearts-flowers-create-romantic-atmosphere-valentine-s-day-celebration-copy-space-text-colorful-made-340960984.jpg'); /* Замени на свой URL фона */
+            background-size: cover;
+            background-position: center;
+            color: #fff; /* Белый текст для видимости на фоне */
+            height: 100vh;
+            width: 100vw;
+            position: fixed;
+            top: 0;
+            left: 0;
+            justify-content: center;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Начальная секция -->
+    <div id="start" class="section active">
+        <img src="https://i.pinimg.com/originals/1a/90/ec/1a90ec1bedf4a14f5c8eda916ebf7c7b.gif" alt="GIF с письмом"> <!-- Замени на свой GIF -->
+        <h1>У меня для тебя письмо...</h1>
+        <button onclick="openLetter()">Открыть</button>
+        <button onclick="showModal()">Не надо</button>
+    </div>
+
+    <!-- Секция с поздравлением Валентина -->
+    <div id="valentine" class="section">
+        <img src="https://www.wordsjustforyou.com/wp-content/uploads/2023/01/Pink-Happy-Valentines-Day-Gif-wj4u7729012023.gif" alt="GIF С Днём Святого Валентина"> <!-- Замени на свой GIF -->
+        <h1>С Днём Святого Валентина!</h1>
+        <button onclick="continueToCongrats()">Продолжить</button>
+    </div>
+
+    <!-- Финальная секция с поздравлением -->
+    <div id="congrats" class="section">
+        <p>Дорогая [Имя],<br>
+        В этот особенный день хочу сказать, как сильно я тебя люблю. Ты — свет в моей жизни, и каждый момент с тобой — настоящее счастье. Будь всегда такой же прекрасной!<br>
+        С любовью, [Твоё имя]</p> <!-- Измени текст на свой -->
+    </div>
+
+    <!-- Модальное окно -->
+    <div id="modal">
+        <div class="modal-content">
+            <p>Ну пожалуйста открой</p>
+            <button onclick="closeModal()">Отмена</button>
+        </div>
+    </div>
+
+    <script>
+        function showModal() {
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        function openLetter() {
+            document.getElementById('start').classList.remove('active');
+            document.getElementById('valentine').classList.add('active');
+        }
+
+        function continueToCongrats() {
+            document.getElementById('valentine').classList.remove('active');
+            document.getElementById('congrats').classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
