@@ -22,7 +22,6 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    /* Нежный бело-розовый градиент */
     background: linear-gradient(-45deg, #fff5f7, #ffe4e9, #fce4ec, #ffffff);
     background-size: 400% 400%;
     animation: gradientMove 15s ease infinite;
@@ -85,6 +84,18 @@ img {
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
+/* Свечение для второй гифки */
+.glow-img {
+    box-shadow: 0 0 20px rgba(216, 27, 96, 0.4);
+    animation: pulseGlow 2s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 15px rgba(216, 27, 96, 0.3); }
+    50% { box-shadow: 0 0 30px rgba(216, 27, 96, 0.6); }
+    100% { box-shadow: 0 0 15px rgba(216, 27, 96, 0.3); }
+}
+
 h1 {
     font-family: 'Lora', serif;
     font-size: 1.8rem;
@@ -135,13 +146,11 @@ button {
     border: 1px solid #ff80ab;
 }
 
-/* Финальный экран — Белый полупрозрачный */
 #congrats {
-    background: rgba(255, 255, 255, 0.7); /* Тот самый белый полупрозрачный фон */
+    background: rgba(255, 255, 255, 0.7); 
     border: 2px solid rgba(255, 255, 255, 0.9);
 }
 
-/* Модалка */
 #modal {
     display: none;
     position: fixed;
@@ -176,7 +185,7 @@ button {
 </div>
 
 <div id="valentine" class="section">
-    <img src="https://media1.tenor.com/m/4naukmEla50AAAAC/love-couple.gif">
+    <img class="glow-img" src="https://media1.tenor.com/m/4naukmEla50AAAAC/love-couple.gif">
     <h1>С Днём Святого Валентина!</h1>
     <div class="buttons">
         <button class="btn-primary" onclick="continueToCongrats()">Продолжить</button>
@@ -186,7 +195,7 @@ button {
 <div id="congrats" class="section">
     <h1>Для тебя ♥️</h1>
     <p>
-        Дорогая [Имя],<br><br>
+        Дорогая <span id="userName">Любимая</span>,<br><br>
         Ты – самое светлое и прекрасное, что случилось со мной. Ты самая очаровательная девушка, что делает мою жизнь лучше. 
         <br><br>
         Я тебя люблю! ♥️
@@ -201,7 +210,16 @@ button {
 </div>
 
 <script>
-let showKisses = false; // Переключатель для поцелуев
+let showKisses = false;
+
+// Логика получения имени из ссылки
+function updateNameFromUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const name = urlParams.get('name');
+    if (name) {
+        document.getElementById('userName').innerText = name;
+    }
+}
 
 function showModal() {
     document.getElementById('modal').style.display = 'flex';
@@ -219,14 +237,13 @@ function openLetter() {
 function continueToCongrats() {
     document.getElementById('valentine').classList.remove('active');
     document.getElementById('congrats').classList.add('active');
-    showKisses = true; // Теперь будут летать и губки
+    showKisses = true; 
 }
 
 function createEmoji() {
     const emoji = document.createElement("div");
     emoji.classList.add("emoji");
 
-    // Если showKisses = true, то 50/50 сердца или губы. Если false - только сердца.
     if (showKisses) {
         emoji.innerHTML = Math.random() > 0.5 ? "♥️" : "💋";
     } else {
@@ -244,9 +261,12 @@ function createEmoji() {
     }, 7000);
 }
 
-// Интервал создания сердечек
+// Запускаем проверку имени при загрузке
+updateNameFromUrl();
 setInterval(createEmoji, 500);
 </script>
 
 </body>
 </html>
+
+
