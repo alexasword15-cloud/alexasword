@@ -3,172 +3,172 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Для тебя ♥️</title>
+<title>Для самой прекрасной 🌸</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,700;1,700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-body {
-    font-family: 'Nunito', sans-serif;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    background: linear-gradient(-45deg, #fff5f7, #ffe4e9, #fce4ec, #ffffff);
-    background-size: 400% 400%;
-    animation: gradientMove 15s ease infinite;
-    color: #5d4037;
+body{
+font-family:'Nunito',sans-serif;
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+
+background:linear-gradient(-45deg,#fff0f5,#ffe4ec,#fce4ec,#fffafc);
+background-size:400% 400%;
+animation:gradientMove 15s ease infinite;
+
+color:#5d4037;
 }
 
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+@keyframes gradientMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
-/* Эмодзи */
-.emoji {
-    position: absolute;
-    bottom: -50px;
-    font-size: 24px;
-    animation: floatUp linear forwards;
-    opacity: 0;
-    pointer-events: none;
-    z-index: 1;
+/* Цветы */
+.flower{
+position:absolute;
+bottom:-40px;
+font-size:26px;
+animation:floatUp linear forwards;
+opacity:0;
+pointer-events:none;
+z-index:1;
 }
 
-@keyframes floatUp {
-    0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 0; }
-    20% { opacity: 0.8; }
-    100% { transform: translateY(-110vh) scale(1.5) rotate(20deg); opacity: 0; }
+@keyframes floatUp{
+0%{transform:translateY(0) scale(1) rotate(0deg);opacity:0;}
+20%{opacity:0.9;}
+100%{transform:translateY(-110vh) scale(1.6) rotate(30deg);opacity:0;}
 }
 
-/* Стеклянные карточки */
-.section {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 90%;
-    max-width: 400px;
-    padding: 40px 30px;
-    border-radius: 40px;
-    backdrop-filter: blur(15px);
-    background: rgba(255, 255, 255, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    box-shadow: 0 15px 35px rgba(255, 182, 193, 0.3);
-    animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 2;
+/* Карточки */
+.section{
+display:none;
+flex-direction:column;
+align-items:center;
+text-align:center;
+width:90%;
+max-width:420px;
+padding:40px 30px;
+
+border-radius:40px;
+backdrop-filter:blur(15px);
+
+background:rgba(255,255,255,0.45);
+border:1px solid rgba(255,255,255,0.7);
+
+box-shadow:0 15px 35px rgba(255,182,193,0.35);
+
+animation:fadeIn 0.8s cubic-bezier(.4,0,.2,1);
+z-index:2;
 }
 
-.active { display: flex; }
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
+.active{
+display:flex;
 }
 
-img {
-    width: 200px;
-    height: auto;
-    margin-bottom: 25px;
-    border-radius: 25px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+@keyframes fadeIn{
+from{opacity:0;transform:scale(.9);}
+to{opacity:1;transform:scale(1);}
 }
 
-/* Свечение для второй гифки */
-.glow-img {
-    box-shadow: 0 0 20px rgba(216, 27, 96, 0.4);
-    animation: pulseGlow 2s infinite ease-in-out;
+img{
+width:200px;
+border-radius:25px;
+margin-bottom:25px;
+box-shadow:0 10px 20px rgba(0,0,0,.05);
 }
 
-@keyframes pulseGlow {
-    0% { box-shadow: 0 0 15px rgba(216, 27, 96, 0.3); }
-    50% { box-shadow: 0 0 30px rgba(216, 27, 96, 0.6); }
-    100% { box-shadow: 0 0 15px rgba(216, 27, 96, 0.3); }
+/* Свечение */
+.glow-img{
+box-shadow:0 0 20px rgba(255,105,180,.5);
+animation:pulseGlow 2s infinite;
 }
 
-h1 {
-    font-family: 'Lora', serif;
-    font-size: 1.8rem;
-    color: #d81b60;
-    margin-bottom: 20px;
-    line-height: 1.2;
+@keyframes pulseGlow{
+0%{box-shadow:0 0 15px rgba(255,105,180,.4);}
+50%{box-shadow:0 0 35px rgba(255,105,180,.8);}
+100%{box-shadow:0 0 15px rgba(255,105,180,.4);}
 }
 
-p {
-    font-size: 1.05rem;
-    line-height: 1.6;
-    color: #6d4c41;
+h1{
+font-family:'Lora',serif;
+font-size:1.9rem;
+color:#d81b60;
+margin-bottom:20px;
+line-height:1.2;
+}
+
+p{
+font-size:1.05rem;
+line-height:1.6;
+color:#6d4c41;
 }
 
 /* Кнопки */
-.buttons {
-    display: flex;
-    gap: 15px;
-    margin-top: 20px;
+.buttons{
+display:flex;
+gap:15px;
+margin-top:20px;
 }
 
-button {
-    padding: 12px 28px;
-    border-radius: 30px;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    font-family: 'Nunito', sans-serif;
+button{
+padding:12px 28px;
+border-radius:30px;
+border:none;
+cursor:pointer;
+font-size:1rem;
+font-weight:600;
+transition:.3s;
 }
 
-.btn-primary {
-    background: #ff80ab;
-    color: white;
-    box-shadow: 0 4px 15px rgba(255, 128, 171, 0.4);
+.btn-primary{
+background:#ff6fa5;
+color:white;
+box-shadow:0 4px 15px rgba(255,105,180,.4);
 }
 
-.btn-primary:hover {
-    background: #ff4081;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 128, 171, 0.6);
+.btn-primary:hover{
+background:#ff4081;
+transform:translateY(-2px);
 }
 
-.btn-secondary {
-    background: rgba(255, 255, 255, 0.8);
-    color: #ad1457;
-    border: 1px solid #ff80ab;
+.btn-secondary{
+background:white;
+color:#d81b60;
+border:1px solid #ff80ab;
 }
 
-#congrats {
-    background: rgba(255, 255, 255, 0.7); 
-    border: 2px solid rgba(255, 255, 255, 0.9);
+#modal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(255,192,203,.4);
+backdrop-filter:blur(5px);
+justify-content:center;
+align-items:center;
+z-index:10;
 }
 
-#modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(255, 192, 203, 0.4);
-    backdrop-filter: blur(5px);
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-}
-
-.modal-content {
-    background: white;
-    padding: 35px;
-    border-radius: 30px;
-    text-align: center;
-    max-width: 320px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+.modal-content{
+background:white;
+padding:35px;
+border-radius:30px;
+text-align:center;
+max-width:320px;
+box-shadow:0 20px 40px rgba(0,0,0,.1);
 }
 </style>
 </head>
@@ -176,97 +176,109 @@ button {
 <body>
 
 <div id="start" class="section active">
-    <img src="https://i.pinimg.com/originals/1a/90/ec/1a90ec1bedf4a14f5c8eda916ebf7c7b.gif">
-    <h1>У меня для тебя кое-что есть…</h1>
-    <div class="buttons">
-        <button class="btn-primary" onclick="openLetter()">Открыть</button>
-        <button class="btn-secondary" onclick="showModal()">Не сейчас</button>
-    </div>
+<img src="https://i.pinimg.com/originals/1a/90/ec/1a90ec1bedf4a14f5c8eda916ebf7c7b.gif">
+<h1>У меня есть маленький сюрприз для тебя 🌸</h1>
+
+<div class="buttons">
+<button class="btn-primary" onclick="openLetter()">Открыть</button>
+<button class="btn-secondary" onclick="showModal()">Не сейчас</button>
+</div>
 </div>
 
 <div id="valentine" class="section">
-    <img class="glow-img" src="https://media1.tenor.com/m/4naukmEla50AAAAC/love-couple.gif">
-    <h1>С Днём Святого Валентина!</h1>
-    <div class="buttons">
-        <button class="btn-primary" onclick="continueToCongrats()">Продолжить</button>
-    </div>
+<img class="glow-img" src="https://media1.tenor.com/m/4naukmEla50AAAAC/love-couple.gif">
+<h1>С 8 Марта 🌷</h1>
+
+<p>
+Сегодня день самых прекрасных девушек.  
+И для меня самая особенная — это ты.
+</p>
+
+<div class="buttons">
+<button class="btn-primary" onclick="continueToCongrats()">Читать дальше</button>
+</div>
 </div>
 
 <div id="congrats" class="section">
-    <h1>Для тебя ♥️</h1>
-    <p>
-        Дорогая <span id="userName">Любимая</span>,<br><br>
-        Ты – самое светлое и прекрасное, что случилось со мной. Ты самая очаровательная девушка, что делает мою жизнь лучше. 
-        <br><br>
-        Я тебя люблю! ♥️
-    </p>
+<h1>С Международным женским днём 💐</h1>
+
+<p>
+Дорогая <span id="userName">Любимая</span>,<br><br>
+
+Пусть в твоей жизни всегда будет столько же красоты,  
+сколько есть в твоей улыбке.  
+Пусть каждый день приносит радость, тепло и счастье.  
+<br><br>
+
+Ты невероятная, нежная и прекрасная девушка.  
+И я очень счастлив, что ты есть в моей жизни.  
+<br><br>
+
+С 8 Марта 🌸  
+</p>
 </div>
 
 <div id="modal">
-    <div class="modal-content">
-        <p style="margin-bottom: 20px;">Ну пожалуйста, загляни внутрь! 🥺</p>
-        <button class="btn-primary" onclick="closeModal()">Хорошо!</button>
-    </div>
+<div class="modal-content">
+<p style="margin-bottom:20px;">Ну пожалуйста, открой 🥺🌷</p>
+<button class="btn-primary" onclick="closeModal()">Хорошо</button>
+</div>
 </div>
 
 <script>
-let showKisses = false;
 
-// Логика получения имени из ссылки
-function updateNameFromUrl() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const name = urlParams.get('name');
-    if (name) {
-        document.getElementById('userName').innerText = name;
-    }
+let showFlowers=false;
+
+function updateNameFromUrl(){
+const urlParams=new URLSearchParams(window.location.search);
+const name=urlParams.get('name');
+if(name){
+document.getElementById('userName').innerText=name;
+}
 }
 
-function showModal() {
-    document.getElementById('modal').style.display = 'flex';
+function showModal(){
+document.getElementById('modal').style.display='flex';
 }
 
-function closeModal() {
-    document.getElementById('modal').style.display = 'none';
+function closeModal(){
+document.getElementById('modal').style.display='none';
 }
 
-function openLetter() {
-    document.getElementById('start').classList.remove('active');
-    document.getElementById('valentine').classList.add('active');
+function openLetter(){
+document.getElementById('start').classList.remove('active');
+document.getElementById('valentine').classList.add('active');
 }
 
-function continueToCongrats() {
-    document.getElementById('valentine').classList.remove('active');
-    document.getElementById('congrats').classList.add('active');
-    showKisses = true; 
+function continueToCongrats(){
+document.getElementById('valentine').classList.remove('active');
+document.getElementById('congrats').classList.add('active');
+showFlowers=true;
 }
 
-function createEmoji() {
-    const emoji = document.createElement("div");
-    emoji.classList.add("emoji");
+function createFlower(){
+const flower=document.createElement("div");
+flower.classList.add("flower");
 
-    if (showKisses) {
-        emoji.innerHTML = Math.random() > 0.5 ? "♥️" : "💋";
-    } else {
-        emoji.innerHTML = "♥️";
-    }
+const flowers=["🌸","🌷","🌹","💐","🌺"];
 
-    emoji.style.left = Math.random() * 100 + "vw";
-    emoji.style.fontSize = (Math.random() * 20 + 20) + "px";
-    emoji.style.animationDuration = (Math.random() * 3 + 4) + "s";
-    
-    document.body.appendChild(emoji);
+flower.innerHTML=flowers[Math.floor(Math.random()*flowers.length)];
 
-    setTimeout(() => {
-        emoji.remove();
-    }, 7000);
+flower.style.left=Math.random()*100+"vw";
+flower.style.fontSize=(Math.random()*20+22)+"px";
+flower.style.animationDuration=(Math.random()*3+4)+"s";
+
+document.body.appendChild(flower);
+
+setTimeout(()=>{
+flower.remove();
+},7000);
 }
 
-// Запускаем проверку имени при загрузке
 updateNameFromUrl();
-setInterval(createEmoji, 500);
+setInterval(createFlower,500);
+
 </script>
 
 </body>
 </html>
-
-
